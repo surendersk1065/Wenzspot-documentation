@@ -12,7 +12,6 @@ import {
   Users,
   BookOpen,
   Rocket,
-  Share2,
 } from "lucide-react";
 
 const QuickStart = ({ setActive }) => {
@@ -22,49 +21,42 @@ const QuickStart = ({ setActive }) => {
       description:
         "Sign in to Webzspot Studio and create a new event by entering the event name, date, venue, and organizer details.",
       icon: Camera,
-      section: "Create Studio",
     },
     {
       title: "Upload Event Photos",
       description:
         "Upload photographs from your device using the browse option or drag-and-drop feature, according to your subscription plan.",
       icon: Upload,
-      section: "Upload Photos",
     },
     {
       title: "Publish Event Gallery",
       description:
         "Manage uploaded photographs in the event gallery and publish the event to make photos accessible to clients.",
       icon: Images,
-      section: "Event Gallery",
     },
     {
       title: "Client Views Gallery",
       description:
         "Clients can access the published event gallery and browse photographs from their event.",
       icon: Users,
-      section: "View Gallery",
     },
     {
       title: "Select Favourite Photos",
       description:
         "Clients can select and save their favourite photographs for the photographer to review.",
       icon: Heart,
-      section: "Select Favourites",
     },
     {
       title: "Edit and Enhance",
       description:
         "Photographers review the selected photos, edit or enhance them, and upload the final versions to the event gallery.",
       icon: Sparkles,
-      section: "Event Gallery",
     },
     {
       title: "Download Final Photos",
       description:
         "Clients can view and download their final photographs when they are available for download.",
       icon: Download,
-      section: "Download Photos",
     },
   ];
 
@@ -182,18 +174,9 @@ const QuickStart = ({ setActive }) => {
                     </h3>
                   </div>
 
-                  <p className="text-gray-600 leading-relaxed mb-4">
+                  <p className="text-gray-600 leading-relaxed">
                     {step.description}
                   </p>
-
-                  <button
-                    type="button"
-                    onClick={() => setActive?.(step.section)}
-                    className="inline-flex items-center gap-2 text-orange-600 font-medium text-sm hover:underline cursor-pointer"
-                  >
-                    Learn More
-                    <ArrowRight size={16} />
-                  </button>
 
                 </div>
 
