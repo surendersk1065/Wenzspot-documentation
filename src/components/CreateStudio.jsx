@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from "react";
 import s1 from "../assets/s1.png";
 import v1 from "../assets/v1.mp4";
 
-
 const CreateStudio = () => {
 
   const videoRef = useRef(null);
@@ -15,7 +14,7 @@ const CreateStudio = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          video.play().catch(() => { });
+          video.play().catch(() => {});
         } else {
           video.pause();
         }
@@ -73,24 +72,40 @@ const CreateStudio = () => {
           Register
         </h2>
 
-        <ol className="list-decimal pl-6 space-y-6 text-gray-700 leading-relaxed">
+        <ol className="space-y-6 text-gray-700 leading-relaxed">
 
-          <li>
-            You need a Webzspot Studio account to get
-            started. Visit{" "}
-            <a
-              href="https://webzspot-studio-verse.vercel.app/studio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline break-all"
-            >
-              https://webzspot-studio-verse.vercel.app/studio
-            </a>
+          <li className="flex items-start gap-4">
+
+            <span className="w-9 h-9 shrink-0 rounded-full bg-orange-100 text-orange-600 font-semibold flex items-center justify-center">
+              1
+            </span>
+
+            <p className="flex-1 pt-1">
+              You need a Webzspot Studio account to get
+              started. Visit{" "}
+              <a
+                href="https://webzspot-studio-verse.vercel.app/studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline break-all"
+              >
+                https://webzspot-studio-verse.vercel.app/studio
+              </a>
+            </p>
+
           </li>
 
-          <li>
-            Sign in if you already have an account,
-            or create a new account if you are a new user.
+          <li className="flex items-start gap-4">
+
+            <span className="w-9 h-9 shrink-0 rounded-full bg-orange-100 text-orange-600 font-semibold flex items-center justify-center">
+              2
+            </span>
+
+            <p className="flex-1 pt-1">
+              Sign in if you already have an account,
+              or create a new account if you are a new user.
+            </p>
+
           </li>
 
         </ol>
@@ -111,32 +126,68 @@ const CreateStudio = () => {
           Create New Event
         </h2>
 
-        <ol className="list-decimal pl-6 space-y-6 text-gray-700 leading-relaxed">
+        <ol className="space-y-6 text-gray-700 leading-relaxed">
 
-          <li>
-            Once you are on the dashboard, locate
-            the <strong>Create New Event</strong> button
-            in the top-right corner of the screen.
+          {/* STEP 1 */}
+          <li className="flex items-start gap-4">
+
+            <span className="w-9 h-9 shrink-0 rounded-full bg-orange-100 text-orange-600 font-semibold flex items-center justify-center">
+              1
+            </span>
+
+            <p className="flex-1 pt-1">
+              Once you are on the dashboard, locate
+              the <strong>Create New Event</strong> button
+              in the top-right corner of the screen.
+            </p>
+
           </li>
 
-          <li>
-            Click the <strong>Create New Event</strong>{" "}
-            button. A popup form will appear, allowing
-            you to enter the event details.
+          {/* STEP 2 */}
+          <li className="flex items-start gap-4">
+
+            <span className="w-9 h-9 shrink-0 rounded-full bg-orange-100 text-orange-600 font-semibold flex items-center justify-center">
+              2
+            </span>
+
+            <p className="flex-1 pt-1">
+              Click the <strong>Create New Event</strong>{" "}
+              button. A popup form will appear, allowing
+              you to enter the event details.
+            </p>
+
           </li>
 
-          <li>
-            Enter the necessary information, including
-            the event name, date, venue, organizer details,
-            and other required fields, as demonstrated
-            in the tutorial video below.
+          {/* STEP 3 */}
+          <li className="flex items-start gap-4">
+
+            <span className="w-9 h-9 shrink-0 rounded-full bg-orange-100 text-orange-600 font-semibold flex items-center justify-center">
+              3
+            </span>
+
+            <p className="flex-1 pt-1">
+              Enter the necessary information, including
+              the event name, date, venue, organizer details,
+              and other required fields, as demonstrated
+              in the tutorial video below.
+            </p>
+
           </li>
 
-          <li>
-            After filling in the required fields,
-            click the <strong>Create Event</strong>{" "}
-            button. Your new event will be created
-            and ready for photo management.
+          {/* STEP 4 */}
+          <li className="flex items-start gap-4">
+
+            <span className="w-9 h-9 shrink-0 rounded-full bg-orange-100 text-orange-600 font-semibold flex items-center justify-center">
+              4
+            </span>
+
+            <p className="flex-1 pt-1">
+              After filling in the required fields,
+              click the <strong>Create Event</strong>{" "}
+              button. Your new event will be created
+              and ready for photo management.
+            </p>
+
           </li>
 
         </ol>
