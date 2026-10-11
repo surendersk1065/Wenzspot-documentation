@@ -1,11 +1,11 @@
 
 import React, { useEffect, useRef } from "react";
 import s3 from "../assets/s3.png";
-import v2 from "../assets/v2.mp4"
+import v2 from "../assets/v2.mp4";
 
 const UploadPhotos = () => {
 
-  const plans = [   
+  const plans = [
     {
       name: "Free Trial",
       price: "Free",
@@ -35,7 +35,7 @@ const UploadPhotos = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          video.play().catch(() => { });
+          video.play().catch(() => {});
         } else {
           video.pause();
         }
@@ -49,6 +49,13 @@ const UploadPhotos = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // ORANGE CIRCULAR NUMBER
+  const StepNumber = ({ number }) => (
+    <span className="w-9 h-9 shrink-0 rounded-full bg-orange-100 text-orange-600 font-semibold flex items-center justify-center">
+      {number}
+    </span>
+  );
 
   return (
     <section>
@@ -96,137 +103,164 @@ const UploadPhotos = () => {
           Photo Upload
         </h2>
 
-        <ol className="list-decimal pl-6 space-y-6 text-gray-700 leading-relaxed">
+        <ol className="space-y-6 text-gray-700 leading-relaxed">
 
           {/* STEP 1 */}
-          <li>
-            After successfully creating an event,
-            navigate to the Dashboard to manage your
-            event details and photographs.
+          <li className="flex items-start gap-4">
+            <StepNumber number={1} />
+
+            <p className="flex-1 min-w-0 pt-1">
+              After successfully creating an event,
+              navigate to the Dashboard to manage your
+              event details and photographs.
+            </p>
           </li>
 
           {/* STEP 2 */}
-          <li>
-            Inside the dashboard, you will find three
-            main sections:{" "}
-            <strong>Photos, Clients, and Favourites.</strong>{" "}
-            Select the Photos section to begin uploading
-            your event photographs.
+          <li className="flex items-start gap-4">
+            <StepNumber number={2} />
+
+            <p className="flex-1 min-w-0 pt-1">
+              Inside the dashboard, you will find three
+              main sections:{" "}
+              <strong>Photos, Clients, and Favourites.</strong>{" "}
+              Select the Photos section to begin uploading
+              your event photographs.
+            </p>
           </li>
 
           {/* STEP 3 */}
-          <li>
-            You can upload photographs using either
-            of the following methods:
+          <li className="flex items-start gap-4">
+            <StepNumber number={3} />
 
-            <ul className="list-disc pl-6 mt-3 space-y-2">
+            <div className="flex-1 min-w-0 pt-1">
+              <p>
+                You can upload photographs using either
+                of the following methods:
+              </p>
 
-              <li>
-                <strong>Browse Files:</strong> Click the
-                upload area to browse and select photos
-                from your device.
-              </li>
+              <ul className="list-disc pl-6 mt-3 space-y-2">
 
-              <li>
-                <strong>Drag and Drop:</strong> Drag photos
-                directly from your device and drop them
-                into the designated upload area.
-              </li>
+                <li>
+                  <strong>Browse Files:</strong> Click the
+                  upload area to browse and select photos
+                  from your device.
+                </li>
 
-            </ul>
+                <li>
+                  <strong>Drag and Drop:</strong> Drag photos
+                  directly from your device and drop them
+                  into the designated upload area.
+                </li>
+
+              </ul>
+            </div>
           </li>
 
           {/* STEP 4 */}
-          <li>
-            Webzspot Studio offers different subscription
-            plans based on your photo upload requirements.
-            Choose a plan according to the number of
-            photographs you want to upload and the
-            subscription validity.
+          <li className="flex items-start gap-4">
+            <StepNumber number={4} />
 
-            {/* SUBSCRIPTION TABLE */}
-            <div className="mt-6 mb-3 w-full overflow-x-auto rounded-xl border border-gray-200">
+            <div className="flex-1 min-w-0 pt-1">
 
-              <table className="w-full min-w-[480px] text-left text-sm">
+              <p>
+                Webzspot Studio offers different subscription
+                plans based on your photo upload requirements.
+                Choose a plan according to the number of
+                photographs you want to upload and the
+                subscription validity.
+              </p>
 
-                <thead className="bg-[#111827] text-white">
+              {/* SUBSCRIPTION TABLE */}
+              <div className="mt-6 mb-3 w-full overflow-x-auto rounded-xl border border-gray-200">
 
-                  <tr>
-                    <th className="px-5 py-4 font-semibold">
-                      Plan
-                    </th>
+                <table className="w-full min-w-[480px] text-left text-sm">
 
-                    <th className="px-5 py-4 font-semibold">
-                      Price
-                    </th>
+                  <thead className="bg-[#111827] text-white">
+                    <tr>
+                      <th className="px-5 py-4 font-semibold">
+                        Plan
+                      </th>
 
-                    <th className="px-5 py-4 font-semibold">
-                      Photo Limit
-                    </th>
+                      <th className="px-5 py-4 font-semibold">
+                        Price
+                      </th>
 
-                    <th className="px-5 py-4 font-semibold">
-                      Validity
-                    </th>
-                  </tr>
+                      <th className="px-5 py-4 font-semibold">
+                        Photo Limit
+                      </th>
 
-                </thead>
-
-                <tbody className="divide-y divide-gray-200">
-
-                  {plans.map((plan, index) => (
-
-                    <tr
-                      key={index}
-                      className="hover:bg-orange-50 transition-colors"
-                    >
-
-                      <td className="px-5 py-4 font-medium text-gray-900">
-                        {plan.name}
-                      </td>
-
-                      <td className="px-5 py-4 font-semibold text-orange-600">
-                        {plan.price}
-                      </td>
-
-                      <td className="px-5 py-4">
-                        {plan.photos}
-                      </td>
-
-                      <td className="px-5 py-4">
-                        {plan.validity}
-                      </td>
-
+                      <th className="px-5 py-4 font-semibold">
+                        Validity
+                      </th>
                     </tr>
+                  </thead>
 
-                  ))}
+                  <tbody className="divide-y divide-gray-200">
 
-                </tbody>
+                    {plans.map((plan, index) => (
+                      <tr
+                        key={index}
+                        className="hover:bg-orange-50 transition-colors"
+                      >
 
-              </table>
+                        <td className="px-5 py-4 font-medium text-gray-900">
+                          {plan.name}
+                        </td>
+
+                        <td className="px-5 py-4 font-semibold text-orange-600">
+                          {plan.price}
+                        </td>
+
+                        <td className="px-5 py-4">
+                          {plan.photos}
+                        </td>
+
+                        <td className="px-5 py-4">
+                          {plan.validity}
+                        </td>
+
+                      </tr>
+                    ))}
+
+                  </tbody>
+
+                </table>
+
+              </div>
 
             </div>
           </li>
 
           {/* STEP 5 */}
-          <li>
-            After selecting your photographs, proceed
-            with the upload process. Make sure the
-            number of photos does not exceed the
-            upload limit provided by your subscription
-            plan.
+          <li className="flex items-start gap-4">
+            <StepNumber number={5} />
+
+            <p className="flex-1 min-w-0 pt-1">
+              After selecting your photographs, proceed
+              with the upload process. Make sure the
+              number of photos does not exceed the
+              upload limit provided by your subscription
+              plan.
+            </p>
           </li>
 
           {/* STEP 6 */}
-          <li>
-            Once the upload is complete, your photographs
-            will be available in the{" "}
-            <strong>Photos</strong> section.
-            You can view and manage the uploaded images
-            for further processing and client access.
+          <li className="flex items-start gap-4">
+            <StepNumber number={6} />
+
+            <p className="flex-1 min-w-0 pt-1">
+              Once the upload is complete, your photographs
+              will be available in the{" "}
+              <strong>Photos</strong> section.
+              You can view and manage the uploaded images
+              for further processing and client access.
+            </p>
           </li>
 
         </ol>
 
+        {/* TUTORIAL VIDEO */}
         <video
           ref={videoRef}
           src={v2}

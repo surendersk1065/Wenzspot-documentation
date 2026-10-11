@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 import s4 from "../assets/s4.png";
-import v3 from "../assets/v3.mp4"
+import v3 from "../assets/v3.mp4";
 
 const EventGallery = () => {
 
@@ -14,7 +14,7 @@ const EventGallery = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          video.play().catch(() => { });
+          video.play().catch(() => {});
         } else {
           video.pause();
         }
@@ -28,6 +28,13 @@ const EventGallery = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // ORANGE CIRCULAR NUMBER
+  const StepNumber = ({ number }) => (
+    <span className="w-9 h-9 shrink-0 rounded-full bg-orange-100 text-orange-600 font-semibold flex items-center justify-center">
+      {number}
+    </span>
+  );
 
   return (
     <section>
@@ -82,64 +89,89 @@ const EventGallery = () => {
           How to Manage the Event Gallery
         </h2>
 
-        <ol className="list-decimal pl-6 space-y-6 text-gray-700 leading-relaxed">
+        <ol className="space-y-6 text-gray-700 leading-relaxed">
 
           {/* STEP 1 */}
-          <li>
-            <strong>View Uploaded Photographs:</strong>{" "}
-            After uploading photos, navigate to the
-            Event Gallery to view all the photographs
-            associated with your event. The gallery
-            can contain hundreds of images, depending
-            on your subscription plan.
+          <li className="flex items-start gap-4">
+            <StepNumber number={1} />
+
+            <p className="flex-1 min-w-0 pt-1">
+              <strong>View Uploaded Photographs:</strong>{" "}
+              After uploading photos, navigate to the
+              Event Gallery to view all the photographs
+              associated with your event. The gallery
+              can contain hundreds of images, depending
+              on your subscription plan.
+            </p>
           </li>
 
           {/* STEP 2 */}
-          <li>
-            <strong>Client Gallery Access:</strong>{" "}
-            Clients can access their event gallery
-            to browse and view the photographs
-            uploaded by the photographer.
+          <li className="flex items-start gap-4">
+            <StepNumber number={2} />
+
+            <p className="flex-1 min-w-0 pt-1">
+              <strong>Client Gallery Access:</strong>{" "}
+              Clients can access their event gallery
+              to browse and view the photographs
+              uploaded by the photographer.
+            </p>
           </li>
 
           {/* STEP 3 */}
-          <li>
-            <strong>Select Favourite Photos:</strong>{" "}
-            Clients can select and save their favourite
-            photographs from the gallery. These selections
-            help the photographer identify the images
-            that clients want to be edited or enhanced.
+          <li className="flex items-start gap-4">
+            <StepNumber number={3} />
+
+            <p className="flex-1 min-w-0 pt-1">
+              <strong>Select Favourite Photos:</strong>{" "}
+              Clients can select and save their favourite
+              photographs from the gallery. These selections
+              help the photographer identify the images
+              that clients want to be edited or enhanced.
+            </p>
           </li>
 
           {/* STEP 4 */}
-          <li>
-            <strong>Edit and Enhance Photographs:</strong>{" "}
-            The photographer can view the photos selected
-            by clients and edit or enhance them according
-            to their requirements.
+          <li className="flex items-start gap-4">
+            <StepNumber number={4} />
+
+            <p className="flex-1 min-w-0 pt-1">
+              <strong>Edit and Enhance Photographs:</strong>{" "}
+              The photographer can view the photos selected
+              by clients and edit or enhance them according
+              to their requirements.
+            </p>
           </li>
 
           {/* STEP 5 */}
-          <li>
-            <strong>Upload Edited Photographs:</strong>{" "}
-            Once the editing process is complete, the
-            photographer can upload the final edited
-            photographs back to the Event Gallery
-            for client viewing.
+          <li className="flex items-start gap-4">
+            <StepNumber number={5} />
+
+            <p className="flex-1 min-w-0 pt-1">
+              <strong>Upload Edited Photographs:</strong>{" "}
+              Once the editing process is complete, the
+              photographer can upload the final edited
+              photographs back to the Event Gallery
+              for client viewing.
+            </p>
           </li>
 
           {/* STEP 6 */}
-          <li>
-            <strong>Publish the Event:</strong>{" "}
-            Locate the <strong>Publish Event</strong>{" "}
-            button in the top-right corner of the
-            Event Gallery. Click the button to publish
-            the event photographs and make them
-            available for clients to view.
+          <li className="flex items-start gap-4">
+            <StepNumber number={6} />
+
+            <p className="flex-1 min-w-0 pt-1">
+              <strong>Publish the Event:</strong>{" "}
+              Locate the <strong>Publish Event</strong>{" "}
+              button in the top-right corner of the
+              Event Gallery. Click the button to publish
+              the event photographs and make them
+              available for clients to view.
+            </p>
           </li>
 
         </ol>
 
+        {/* TUTORIAL VIDEO */}
         <video
           ref={videoRef}
           src={v3}
