@@ -19,8 +19,8 @@ const sections = [
     items: [
       "View Gallery",
       "Select Favourites",
-      "AI Photo Search",
-      "Download Photos",
+      "Clients",
+      "Access Board",
     ],
   },
 ];

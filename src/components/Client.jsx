@@ -3,8 +3,8 @@ import React from "react";
 
 import ViewGallery from "./ViewGallery";
 import SelectFavourites from "./SelectFavourites";
-import AIPhotoSearch from "./AIPhotoSearch";
-import DownloadPhotos from "./DownloadPhotos";
+import Clients from "./Clients";
+import AccessBoard from "./AccessBoard";
 
 const Client = ({ active }) => {
   return (
@@ -14,9 +14,9 @@ const Client = ({ active }) => {
 
       {active === "Select Favourites" && <SelectFavourites />}
 
-      {active === "AI Photo Search" && <AIPhotoSearch />}
+      {active === "Clients" && <Clients />}
 
-      {active === "Download Photos" && <DownloadPhotos />}
+      {active === "Access Board" && <AccessBoard />}
 
     </section>
   );
